@@ -1,0 +1,87 @@
+$nsize: 120px
+$pcolor: #020505
+$percent: 50%
+$weigth: 40px
+$primary: #444758
+$secundary: black
+$bg-color: #001518
+
+body
+	margin: 0
+	color: $pcolor
+	background: black
+	cursor: none
+
+canvas
+	top: 0
+	z-index: -1
+	display: block
+	position: fixed
+	width: $percent * 2
+	height: $percent * 2
+
+.header
+	top: $percent
+	left: $percent
+	display: none
+	position: absolute
+	transform: translate(-$percent, -$percent)
+	pointer-events: none
+	strong
+		color: $pcolor
+
+p
+	color: $pcolor
+	
+.btn
+	border-radius: 50px
+	padding: 10px 30px
+	&-outline-info
+		color: $secundary
+		border-color: $secundary
+	
+.tlevel, .blevel
+	display: none
+	height: $nsize
+	background: $pcolor
+	
+.footer
+	z-index: 10001
+	right: 1rem
+	bottom: 2rem
+	position: absolute
+	img
+		width: 2.5rem
+		transition: opacity 0.5s
+		&:hover
+			opacity: 0.5
+	
+//-----
+// Mouse setup
+//-----
+
+.mouse, .mouse-guide, .mouse-mid
+	position: fixed
+	border-radius: 50%
+	pointer-events: none
+	transform: translate(-50%, -50%)
+	transition: width 0.2s, height 0.2s, border-width 0.1s, opacity 0.1s
+	transition-delay: 0.05s
+	z-index: 2
+
+.mouse
+	opacity: 0.4
+	width: $weigth
+	height: $weigth
+	border: 20px solid $primary
+
+.mouse-mid
+	display: none
+	width: $weigth / 4
+	height: $weigth / 4
+	background-color: $secundary
+
+.mouse-guide
+	width: $weigth / 8
+	height: $weigth / 8
+	background-color: $secundary
